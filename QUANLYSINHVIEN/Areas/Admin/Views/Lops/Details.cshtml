@@ -1,0 +1,42 @@
+﻿@model QUANLYSINHVIEN.Models.Lop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi Tiết</h2>
+
+<div>
+    <h4>Lop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Lớp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLop)
+        </dd>
+        <dt>
+            Tên Lớp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLop)
+        </dd>
+
+        <dt>
+            Mã Khoa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKhoa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLop }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

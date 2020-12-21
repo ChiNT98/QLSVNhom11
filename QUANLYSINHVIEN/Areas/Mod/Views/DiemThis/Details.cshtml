@@ -1,0 +1,58 @@
+﻿@model QUANLYSINHVIEN.Models.DiemThi
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Mod/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi Tiết</h2>
+
+<div>
+    <h4>ĐIểm Thi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Sinh Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaSv)
+        </dd>
+        <dt>
+            Tên Sinh Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSv)
+        </dd>
+
+        <dt>
+            Mã Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMh)
+        </dd>
+
+        <dt>
+            Tên Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMh)
+        </dd>
+
+        <dt>
+            Điểm Thi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diem)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaSv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

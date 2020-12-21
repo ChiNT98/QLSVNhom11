@@ -1,0 +1,49 @@
+﻿@model QUANLYSINHVIEN.Models.GiangVien
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi Tiết</h2>
+
+<div>
+    <h4>Thông Tin Giảng Viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Giảng Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaGv)
+        </dd>
+        <dt>
+            Tên Giảng Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGv)
+        </dd>
+        <dt>
+            Mã Khoa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKhoa)
+        </dd>
+
+        <dt>
+            Mã Lớp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLop)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaGv }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

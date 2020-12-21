@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Trang chủ</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            @*<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>*@
+            <div class="navbar navbar-expand-sm bg-light text-dark navbar-dark w-100">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item mx-3">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-item mx-3">@Html.ActionLink("Nhập Điểm", "Index", "DiemThis")</li>
+                        <li class="nav-item mx-3">@Html.ActionLink("Môn Học", "Index", "MonHocs")</li>
+                        <li class="nav-item mx-3">@Html.ActionLink("Sinh Viên", "Index", "SinhViens")</li>
+                        @if (Session["Username"] == null)
+                        {
+                            <li class="nav-item mx-3">@Html.ActionLink("Đăng Ký", "DangKy", "Home")</li>
+                            <li class="nav-item mx-3">@Html.ActionLink("Đăng Nhập", "DangNhap", "Home")</li>
+                        }
+                        else
+                        {
+                            <li class="nav-item mx-3 text-white">Xin chào:@Session["Username"]</li>
+                            <li class="nav-item mx-3">
+                                @Html.ActionLink("Đăng Xuất", "Logout", "Home")
+                            </li>
+                        }
+
+
+
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <!--<-->@*footer>
+            <p>&copy; @DateTime.Now.Year</p>
+        </footer>*@
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

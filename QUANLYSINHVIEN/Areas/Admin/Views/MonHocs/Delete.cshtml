@@ -1,0 +1,56 @@
+﻿@model QUANLYSINHVIEN.Models.MonHoc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa Môn Học</h2>
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMh)
+        </dd>
+        <dt>
+            Tên Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMh)
+        </dd>
+
+        <dt>
+            Tên Giảng Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGv)
+        </dd>
+
+        <dt>
+            Số Tín Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTc)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

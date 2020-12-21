@@ -1,0 +1,63 @@
+﻿@model QUANLYSINHVIEN.Models.DiemThi
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Mod/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa điểm thi</h2>
+
+
+<div>
+    <h4>Điểm Thi</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Sinh Viên
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MaSv)
+        </dd>
+        <dt>
+            Tên Sinh Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSv)
+        </dd>
+
+        <dt>
+            Mã Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMh)
+        </dd>
+
+        <dt>
+            Tên Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMh)
+        </dd>
+
+        <dt>
+            Điểm Thi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diem)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

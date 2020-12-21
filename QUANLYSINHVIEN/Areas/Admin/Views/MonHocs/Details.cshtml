@@ -1,0 +1,50 @@
+﻿@model QUANLYSINHVIEN.Models.MonHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>MonHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaMh)
+        </dd>
+        <dt>
+           Tên Môn Học
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMh)
+        </dd>
+
+        <dt>
+            Tên Giảng viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGv)
+        </dd>
+
+        <dt>
+            Số Tín Chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoTc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaMh }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

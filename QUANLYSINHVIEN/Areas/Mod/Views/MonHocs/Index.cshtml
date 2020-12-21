@@ -1,0 +1,46 @@
+﻿@model IEnumerable<QUANLYSINHVIEN.Models.MonHoc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Mod/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tên Môn học
+        </th>
+        <th>
+            Tên Giảng Viên
+        </th>
+        <th>
+            Số Tín Chỉ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenGv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoTc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaMh }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaMh }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaMh })
+        </td>
+    </tr>
+}
+
+</table>

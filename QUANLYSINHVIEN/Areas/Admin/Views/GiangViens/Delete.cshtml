@@ -1,0 +1,55 @@
+﻿@model QUANLYSINHVIEN.Models.GiangVien
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Xóa Giảng Viên</h2>
+
+
+<div>
+    <h4>Thông Tin Giảng Viên</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Giảng Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaGv)
+        </dd>
+        <dt>
+            Tên giảng Viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenGv)
+        </dd>
+        <dt>
+            Mã Khoa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKhoa)
+        </dd>
+
+        <dt>
+            Mã Lớp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLop)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

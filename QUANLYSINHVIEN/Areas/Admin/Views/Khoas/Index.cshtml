@@ -1,0 +1,41 @@
+﻿@model IEnumerable<QUANLYSINHVIEN.Models.Khoa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thông Tin Khoa</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Mã Khoa</th>
+    
+        <th>
+            Tên Khoa
+        </th>
+    </tr>
+       
+        
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaKhoa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenKhoa)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaKhoa }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaKhoa }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaKhoa })
+    </td>
+</tr>
+}
+
+</table>
